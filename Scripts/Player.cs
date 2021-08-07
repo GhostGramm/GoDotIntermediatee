@@ -4,6 +4,7 @@ using System;
 public class Player : KinematicBody2D
 {
     private Vector2 velocity = new Vector2(0,0);
+    private int moveSpeed = 100;
     public override void _Ready()
     {
         
@@ -16,23 +17,17 @@ public class Player : KinematicBody2D
 
     public void PlayerMovement()
     {
-        if(Input.IsActionJustPressed("ui_up"))
+        if(Input.IsActionPressed("ui_left"))
         {
-            velocity.y = -50;
+            velocity.x = -moveSpeed;
         }
-        if(Input.IsActionJustPressed("ui_down"))
+        if(Input.IsActionPressed("ui_right"))
         {
-            velocity.y = 50;
-        }
-        if(Input.IsActionJustPressed("ui_left"))
-        {
-            velocity.x = -50;
-        }
-        if(Input.IsActionJustPressed("ui_right"))
-        {
-            velocity.x = 50;
+            velocity.x = moveSpeed;
         }
         MoveAndSlide(velocity);
+
+        velocity.x = Mathf.Lerp(velocity.x,0,0.1f);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
