@@ -3,14 +3,19 @@ using System;
 
 public class Player : KinematicBody2D
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
+    private Vector2 velocity = new Vector2(0,0);
     public override void _Ready()
     {
-        GD.Print("intermediate level");
+        
+    }
+
+    public override void _PhysicsProcess(float delta)
+    {
+        if(Input.IsActionPressed("ui_up"))
+        {
+            GD.Print("key pressed");
+            velocity.y += 50;
+        }
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

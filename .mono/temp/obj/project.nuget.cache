@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1bbDnbVtk9kRKTdAyOr9kSXaFqErb614/NwqUAFHcaCL426V5tyAlO/sCgG+GatSkma+qTkW+d8gq//58EgF3g==",
+  "dgSpecHash": "KJGN912e2opv8xE9mbyxQ8DotMjw0rEpUbSGB3/3icy+tW+36wgFnBOMf03o/xKEHUYkPNckB5tFk24WBYqjEg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\GHOST\\Documents\\GoDotIntermediatee\\GoDotIntermediatee.csproj",
+  "projectFilePath": "C:\\Users\\GHOST\\Documents\\GoDotIntermediatee\\GoDotIntermediatee.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GHOST\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
     "C:\\Users\\GHOST\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"

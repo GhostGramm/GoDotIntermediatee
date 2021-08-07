@@ -1,0 +1,8 @@
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\bin\Debug\GoDotIntermediatee.dll
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\bin\Debug\GoDotIntermediatee.pdb
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.csprojAssemblyReference.cache
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.AssemblyInfoInputs.cache
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.AssemblyInfo.cs
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.csproj.CoreCompileInputs.cache
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.dll
+C:\Users\GHOST\Documents\GoDotIntermediatee\.mono\temp\obj\Debug\GoDotIntermediatee.pdb
