@@ -11,11 +11,28 @@ public class Player : KinematicBody2D
 
     public override void _PhysicsProcess(float delta)
     {
-        if(Input.IsActionPressed("ui_up"))
+        PlayerMovement();
+    }
+
+    public void PlayerMovement()
+    {
+        if(Input.IsActionJustPressed("ui_up"))
         {
-            GD.Print("key pressed");
-            velocity.y += 50;
+            velocity.y = -50;
         }
+        if(Input.IsActionJustPressed("ui_down"))
+        {
+            velocity.y = 50;
+        }
+        if(Input.IsActionJustPressed("ui_left"))
+        {
+            velocity.x = -50;
+        }
+        if(Input.IsActionJustPressed("ui_right"))
+        {
+            velocity.x = 50;
+        }
+        MoveAndSlide(velocity);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
