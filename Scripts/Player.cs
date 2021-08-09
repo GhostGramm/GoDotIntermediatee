@@ -41,6 +41,7 @@ public class Player : KinematicBody2D
         }
         if (IsOnFloor())
         {
+            isJumping = false;
             if (Input.IsActionPressed("jump"))
             {
                 velocity.y = -jumpHeight;
