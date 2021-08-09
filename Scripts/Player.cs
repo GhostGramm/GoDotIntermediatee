@@ -8,8 +8,8 @@ public class Player : KinematicBody2D
     private int jumpHeight = 1000;
     private int gravity = 30;
     private bool isJumping = false;
-    private float jumpTime = 1f;
-    private float jumpTimeReset = 1f;
+    private float jumpTime = .4f;
+    private float jumpTimeReset = .4f;
     private AnimatedSprite animatedSprite;
     public override void _Ready()
     {
@@ -53,15 +53,15 @@ public class Player : KinematicBody2D
             animatedSprite.Play("jump");
         }
 
-        if(isJumping)
-        {
-            jumpTime -= delta;
-            if(jumpTime <= 0)
-            {
-                isJumping = false;
-                jumpTime = jumpTimeReset;
-            }
-        }
+        // if(isJumping)
+        // {
+        //     jumpTime -= delta;
+        //     if(jumpTime <= 0)
+        //     {
+        //         isJumping = false;
+        //         jumpTime = jumpTimeReset;
+        //     }
+        // }
 
         velocity.y += gravity;
 
