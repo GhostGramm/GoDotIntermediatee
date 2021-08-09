@@ -4,9 +4,12 @@ using System;
 public class Player : KinematicBody2D
 {
     private Vector2 velocity = new Vector2(0, 0);
-    private int moveSpeed = 100;
+    private int moveSpeed = 200;
     private int jumpHeight = 1000;
     private int gravity = 30;
+    private bool isJumping = false;
+    private float jumpTime = 1f;
+    private float jumpTimeReset = 1f;
     private AnimatedSprite animatedSprite;
     public override void _Ready()
     {
@@ -15,10 +18,10 @@ public class Player : KinematicBody2D
 
     public override void _PhysicsProcess(float delta)
     {
-        PlayerMovement();
+        PlayerMovement(delta);
     }
 
-    public void PlayerMovement()
+    public void PlayerMovement(float delta)
     {
         if (Input.IsActionPressed("ui_left"))
         {
@@ -41,11 +44,22 @@ public class Player : KinematicBody2D
             if (Input.IsActionPressed("jump"))
             {
                 velocity.y = -jumpHeight;
+                isJumping = true;
             }
         }
-        if(!IsOnFloor())
+        if(!IsOnFloor() && isJumping)
         {
             animatedSprite.Play("jump");
+        }
+
+        if(isJumping)
+        {
+            jumpTime -= delta;
+            if(jumpTime <= 0)
+            {
+                isJumping = false;
+                jumpTime = jumpTimeReset;
+            }
         }
 
         velocity.y += gravity;
