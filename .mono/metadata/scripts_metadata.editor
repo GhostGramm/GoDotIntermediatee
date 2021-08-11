@@ -1,1 +1,1 @@
-{"res://Scripts/Player.cs":{"modified_time":"1628547432","class":{"namespace":"","class_name":"Player","nested":false}}}
+{"res://Scripts/Player.cs":{"modified_time":"1628547432","class":{"namespace":"","class_name":"Player","nested":false}},"res://Scenes/Death.cs":{"modified_time":"1628691292","class":{"namespace":"","class_name":"Death","nested":false}},"res://Scenes/GameManager.cs":{"modified_time":"1628692542","class":{"namespace":"","class_name":"GameManager","nested":false}}}

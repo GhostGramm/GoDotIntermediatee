@@ -1,14 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Background.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameManager.cs" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1409.84, 20.0331 )
 
 [node name="Level1" type="Node"]
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 499.467, 168.867 )
+script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 327691, 8, 0, 327692, 15, 0, 327693, 15, 0, 327694, 9, 0, 524289, 0, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 2, 0, 589825, 18, 0, 589826, 18, 0, 589827, 18, 0, 589828, 18, 0, 589829, 18, 0, 589830, 18, 0, 589831, 18, 0, 589832, 18, 0, 589833, 18, 0, 589834, 18, 0, 589835, 18, 0, 589836, 18, 0 )
+tile_data = PoolIntArray( 0, 18, 0, 18, 16, 0, 19, 15, 0, 20, 15, 0, 21, 15, 0, 22, 15, 0, 23, 15, 0, 24, 15, 0, 25, 17, 0, 65536, 18, 0, 131072, 18, 0, 131087, 8, 0, 131088, 9, 0, 196608, 18, 0, 196634, 4, 0, 262144, 18, 0, 262165, 8, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 262170, 9, 0, 327680, 18, 0, 327691, 8, 0, 327692, 15, 0, 327693, 15, 0, 327694, 9, 0, 393216, 18, 0, 393244, 0, 0, 393245, 1, 0, 393246, 1, 0, 393247, 1, 0, 393248, 1, 0, 393249, 1, 0, 393250, 1, 0, 393251, 1, 0, 393252, 1, 0, 393253, 1, 0, 393254, 1, 0, 393255, 2, 0, 458752, 18, 0, 458780, 18, 0, 458781, 18, 0, 458782, 18, 0, 458783, 18, 0, 458784, 18, 0, 458785, 18, 0, 458786, 18, 0, 458787, 18, 0, 458788, 18, 0, 458789, 18, 0, 458790, 18, 0, 458791, 18, 0, 524288, 18, 0, 524289, 0, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 2, 0, 589824, 18, 0, 589825, 18, 0, 589826, 18, 0, 589827, 18, 0, 589828, 18, 0, 589829, 18, 0, 589830, 18, 0, 589831, 18, 0, 589832, 18, 0, 589833, 18, 0, 589834, 18, 0, 589835, 18, 0, 589836, 18, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 265.467, 310.867 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 57
+limit_right = 3000
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1469.34, 745.049 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
